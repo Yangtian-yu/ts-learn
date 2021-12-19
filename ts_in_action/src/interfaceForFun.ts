@@ -19,6 +19,7 @@ function getLib() {
   lib.version = "1.0";
   lib.doSomething = () => {
     console.log("doSomething");
+    return 1;
   };
   return lib;
 }
