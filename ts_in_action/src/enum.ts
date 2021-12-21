@@ -15,6 +15,7 @@ enum Message {
   Fail = "抱歉，失败了",
 }
 console.log(Message);
+
 //异构枚举
 enum Answer {
   N,
@@ -59,7 +60,7 @@ enum G {
 }
 
 let e: E = 3;
-let f: F = 3;
+let f1: F = 3;
 //e === f
 
 let e1: E.a = 1;

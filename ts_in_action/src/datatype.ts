@@ -37,7 +37,7 @@ let nu: null = null;
 let noReturn = () => {};
 
 //any
-let x;
+// let x;
 
 //never
 let error = () => {
