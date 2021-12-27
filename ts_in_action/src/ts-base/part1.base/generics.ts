@@ -9,6 +9,7 @@ interface Log1<T = string> {
 }
 let mylog: Log1 = log;
 mylog("a");
+mylog("a");
 
 class Log<T> {
   run(value: T) {
