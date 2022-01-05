@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ForkTsCheckerWebpackPlugdin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -27,6 +28,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/tpl/index.html",
     }),
+    new ForkTsCheckerWebpackPlugdin(),
   ],
   optimization: {
     splitChunks: {
