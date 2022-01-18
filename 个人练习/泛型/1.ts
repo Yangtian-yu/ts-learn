@@ -53,3 +53,22 @@ ele.addEventListener(
   },
   false
 );
+function identity<T>(arg: T): T {
+  return arg;
+}
+identity<string>("wanzhuan");
+identity<number>(1);
+interface VueCourse5 {
+  name: string;
+  price: number;
+}
+type CourseProps = keyof VueCourse5; //只能是name和price选一个
+
+let k: CourseProps = "name";
+let k1: CourseProps = "price";
+
+type extendsType<T> = T extends boolean ? "重学前端" : "玩转Vue3";
+
+type extendsType1 = extendsType<boolean>;
+
+type extendsType2 = extendsType<string>;
