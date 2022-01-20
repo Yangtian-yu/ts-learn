@@ -72,3 +72,37 @@ type extendsType<T> = T extends boolean ? "重学前端" : "玩转Vue3";
 type extendsType1 = extendsType<boolean>;
 
 type extendsType2 = extendsType<string>;
+
+type Courses = "玩转vue 3 " | "重学前端";
+type CourseObje = {
+  [K in Courses]: number;
+};
+
+// K extends keyof T 限制K的类型必须是T的属性之一
+//T【K】是值的类型
+function getProperty<T, K extends keyof T>(o: T, name: K): T[K] {
+  return o[name];
+}
+
+const coursePrice: CourseObje = {
+  "玩转vue 3 ": 123,
+  重学前端: 1,
+};
+getProperty(coursePrice, "玩转vue 3 ");
+
+type Foo = () => CourseObje;
+//如果T是一个函数，并且函数返回类型是P就返回P
+type ReturnType1<T> = T extends () => infer P ? P : never;
+type Foo1 = ReturnType1<Foo>;
+
+interface Todo {
+  title: string;
+  decs: string;
+  done: boolean;
+}
+
+type Partial1<T> = {
+  [K in keyof T]?: T[K];
+};
+
+type partTodo = Partial1<Todo>;
