@@ -32,4 +32,54 @@ function add110(x: number, y: number): number {
 }
 add110(1, 2);
 
-let add;
+let add1: (a: number, b: number) => number = function (
+  x: number,
+  y: number
+): number {
+  return x + y;
+};
+interface addType1 {
+  (a: number, b: number): number;
+}
+let add3: addType1 = function (x: number, y: number): number {
+  return x + y;
+};
+add3(1, 2);
+
+function identity<T>(arg: T): T {
+  return arg;
+}
+identity<string>("asd");
+
+interface VueCourse5 {
+  name: string;
+  prisce: number;
+}
+type CourseProps = keyof VueCourse5;
+let k: CourseProps = "name";
+let k1: CourseProps = "prisce";
+
+type ExtendsType<T> = T extends boolean ? "重学前端" : "玩转vue25";
+type ExtendsType1 = ExtendsType<boolean>;
+let a: ExtendsType1 = "重学前端";
+type ExtendsType2 = ExtendsType<string>;
+type Courses = "玩转全家桶" | "重学前端";
+type CourseObj = {
+  [k in Courses]: number;
+};
+let b: CourseObj = {
+  玩转全家桶: 1,
+  重学前端: 2,
+};
+
+function getProperty<T, K extends keyof T>(o: T, name: K): T[K] {
+  return o[name];
+}
+const coursePrice: CourseObj = {
+  玩转全家桶: 127,
+  重学前端: 2,
+};
+getProperty(coursePrice, "玩转全家桶");
+type Foo = () => CourseObj;
+type ReturnType1<T> = T extends () => infer P ? P : never;
+type Foo1 = ReturnType1<Foo>;
