@@ -3,7 +3,7 @@ document.querySelectorAll(".app")[0].innerHTML = hello;
 const ArrayList: HTMLElement[] = Array.from(document.querySelectorAll("*"));
 console.log(ArrayList);
 type count = {
-  a?: 2;
+  [propName: string]: number;
 };
 const count: count = {};
 for (let index = 0; index < ArrayList.length; index++) {
@@ -13,7 +13,7 @@ for (let index = 0; index < ArrayList.length; index++) {
 }
 console.log(count);
 const list = Object.entries(count)
-  .sort((a: [string, number], b: [string, number]) => b[1] - a[1])
+  .sort((a, b) => b[1] - a[1])
   .slice(0, 3)
   .map((item) => {
     return item[0];
