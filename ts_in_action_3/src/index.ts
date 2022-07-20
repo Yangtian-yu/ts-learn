@@ -8,7 +8,6 @@ type count = {
 const count: count = {};
 for (let index = 0; index < ArrayList.length; index++) {
   const element: string = ArrayList[index].tagName;
-
   count[element] = (count[element] || 0) + 1;
 }
 console.log(count);
