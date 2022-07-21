@@ -35,3 +35,14 @@ log3([]);
 log3("a");
 log3({ length: 1 });
 export {};
+
+interface a {
+  xx: string;
+  xx1: string;
+  xx1: string;
+  xx2: string;
+  xx: string;
+  xx: string;
+  xx: string;
+}
+interface  b extends a  

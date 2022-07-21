@@ -7,7 +7,6 @@ type cases = [
   // @ts-expect-error
   MyPick<Todo, "title" | "completed" | "invalid">
 ];
-
 interface Todo {
   title: string;
   description: string;

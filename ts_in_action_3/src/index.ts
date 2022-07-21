@@ -9,6 +9,8 @@ const count: count = {};
 for (let index = 0; index < ArrayList.length; index++) {
   const element: string = ArrayList[index].tagName;
   count[element] = (count[element] || 0) + 1;
+  // count[element] =
+  //   count[element] || count[element] === 0 ? count[element] + 1 : 0;
 }
 console.log(count);
 const list = Object.entries(count)

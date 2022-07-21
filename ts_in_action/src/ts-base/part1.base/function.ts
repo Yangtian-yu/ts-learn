@@ -12,7 +12,7 @@ interface add8 {
 }
 
 //add5(1, 2,3);
-function add9(x: number, y?: number) {
+function add9(x: number, y?: number): number {
   return y ? x + y : x;
 }
 add9(1);
