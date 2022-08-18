@@ -100,7 +100,6 @@ interface Todo {
   decs: string;
   done: boolean;
 }
-
 type Partial1<T> = {
   [K in keyof T]?: T[K];
 };

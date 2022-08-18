@@ -5,19 +5,23 @@ export type MyPick<T, K extends keyof T> = {
 
 //js
 //对比学习法
-function myTick(todo, keys) {
+function myPick(todo, keys) {
   const obj = {};
-  keys.forEach((element) => {
-    if (element in todo) {
-      obj[element] = todo[element];
+
+  keys.forEach((key) => {
+    if (key in todo) {
+      obj[key] = todo[key];
     }
   });
-
   return obj;
 }
-
-
-//返回一个对象
-//遍历 foreach
-//todo[key]取值
-//看看key在不在todo里面
+//1.返回一个对象
+//2.遍历 foreach
+//- https://www.typescriptlang.org/docs/handbook/2/mapped-types.html#handbook-content
+//3.todo[key]取值 indexed
+// - https://www.typescriptlang.org/docs/handbook/2/mapped-types.html?#handbook-content
+//4.看看key在不在todo里面
+//1. keyof  lookup
+//- https://www.typescriptlang.org/docs/handbook/2/keyof-types.html#the-keyof-type-operator
+//exends
+//- https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-constraints
