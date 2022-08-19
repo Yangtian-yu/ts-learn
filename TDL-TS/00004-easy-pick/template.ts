@@ -1,4 +1,12 @@
 //ts 联合类型 union
+// export type MyPick<T, K extends keyof T> = {
+//   [P in K]: T[P];
+// };
+
+// export type MyPick<T, K extends keyof T> = {
+//   [P in K]: T[P];
+// };
+
 export type MyPick<T, K extends keyof T> = {
   [P in K]: T[P];
 };
@@ -25,3 +33,15 @@ function myPick(todo, keys) {
 //- https://www.typescriptlang.org/docs/handbook/2/keyof-types.html#the-keyof-type-operator
 //exends
 //- https://www.typescriptlang.org/docs/handbook/2/generics.html#generic-constraints
+
+interface Todo {
+  title: string;
+  description: string;
+  completed: boolean;
+}
+
+type a<T, K extends keyof T> = {
+  [P in K]: P;
+};
+
+type b = a<Todo, "title">;
