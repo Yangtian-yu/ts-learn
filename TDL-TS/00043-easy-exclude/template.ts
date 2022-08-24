@@ -1,4 +1,4 @@
-type MyExclude<T, U> = T extends U ? never : T;
+export type MyExclude<T, U> = T extends U ? never : T;
 //js
 function exclude(T: any[], U: any[]) {
   const result = [];
@@ -14,9 +14,6 @@ function exclude(T: any[], U: any[]) {
     //   if (!boo) {
     //     result.push(t);
     //   }
-    if (!U.includes(t)) {
-      result.push(t);
-    }
   }
 
   return result;

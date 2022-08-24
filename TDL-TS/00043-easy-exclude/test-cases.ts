@@ -1,4 +1,5 @@
 import type { Equal, Expect } from "@type-challenges/utils";
+import { MyExclude } from "./template";
 
 type t1 = Exclude<"a" | "b" | "c", "a">;
 
