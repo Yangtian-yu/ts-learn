@@ -23,5 +23,7 @@ let arr5: any[] = [1, "--"];
 
 function zz(...args: number[]) {
   console.log(args);
+  console.log(arguments);
+  let a: IArguments = arguments;
 }
 zz(1, 2, 3);
